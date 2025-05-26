@@ -18,19 +18,13 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-14">
         
         <ProjectsCard
-          title="Futsal Booking Website"
-          des=" Developed the frontend of futsal booking app using HTML, CSS and JS"
+          title="Futsal Booking App"
+          des=" Developed the fully functional futsal boking app using Node.JS, React, Tailwind CSS, and PostgreSQL."
           src={projectTwo}
         />
         <ProjectsCard
-          title="Bonsai Web App"
-          des=" Developed and Enhanced the user interface and interactive elements using HTML, CSS and JS"
-          src={projectOne}
-        />
-        <ProjectsCard
-          title="Bank Management App"
-          des=" Developed a system for managing bank transactions, including features for deposit, withdrawal, and transfer operations using 
-          Java "
+          title="Book Management App"
+          des="Developed a desktop-based book store system using C#.NET, ASP.NET Core Web API, PostgreSQL, and React"
           src={projectThree}
         />
        

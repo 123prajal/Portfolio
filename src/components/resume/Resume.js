@@ -1,89 +1,62 @@
-import React, {  useState } from 'react'
+import React, { useState } from 'react'
 import Title from '../layouts/Title';
 import Education from './Education';
 import Skills from './Skills';
-import Achievement from './Achievement';
 import Experience from "./Experience"
 
 const Resume = () => {
-   const [educationData, setEducationData] = useState(true);
-   const [skillData, setSkillData] = useState(false);
-   const [experienceData, setExperienceData] = useState(false);
-   const [achievementData, setAchievementData] = useState(false);
+  const [activeTab, setActiveTab] = useState('education');
+
   return (
     <section id="resume" className="w-full py-20 border-b-[1px] border-b-black">
       <div className="flex justify-center items-center text-center">
         <Title title="" des="My Resume" />
       </div>
-      <div>
-        <ul className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      
+      {/* Navigation Menu */}
+      <div className="w-full flex justify-center mb-14">
+        <ul className="inline-flex flex-wrap justify-center gap-4 md:gap-8">
           <li
-            onClick={() =>
-              setEducationData(true) &
-              setSkillData(false) &
-              setExperienceData(false) &
-              setAchievementData(false)
-            }
-            className={`${
-              educationData
-                ? "border-designColor rounded-lg"
-                : "border-transparent"
-            } resumeLi`}
+            onClick={() => setActiveTab('education')}
+            className={`cursor-pointer px-4 py-2 text-xl font-medium border-b-2 transition-all ${
+              activeTab === 'education'
+                ? "border-designColor text-designColor"
+                : "border-transparent text-gray-400 hover:text-gray-300"
+            }`}
           >
             Education
           </li>
           <li
-            onClick={() =>
-              setEducationData(false) &
-              setSkillData(true) &
-              setExperienceData(false) &
-              setAchievementData(false)
-            }
-            className={`${
-              skillData ? "border-designColor rounded-lg" : "border-transparent"
-            } resumeLi`}
+            onClick={() => setActiveTab('skills')}
+            className={`cursor-pointer px-4 py-2 text-xl font-medium border-b-2 transition-all ${
+              activeTab === 'skills'
+                ? "border-designColor text-designColor"
+                : "border-transparent text-gray-400 hover:text-gray-300"
+            }`}
           >
             Professional Skills
           </li>
           <li
-            onClick={() =>
-              setEducationData(false) &
-              setSkillData(false) &
-              setExperienceData(true) &
-              setAchievementData(false)
-            }
-            className={`${
-              experienceData
-                ? "border-designColor rounded-lg"
-                : "border-transparent"
-            } resumeLi`}
+            onClick={() => setActiveTab('experience')}
+            className={`cursor-pointer px-4 py-2 text-xl font-medium border-b-2 transition-all ${
+              activeTab === 'experience'
+                ? "border-designColor text-designColor"
+                : "border-transparent text-gray-400 hover:text-gray-300"
+            }`}
           >
             Experience
           </li>
-          <li
-            onClick={() =>
-              setEducationData(false) &
-              setSkillData(false) &
-              setExperienceData(false) &
-              setAchievementData(true)
-            }
-            className={`${
-              achievementData
-                ? "border-designColor rounded-lg"
-                : "border-transparent"
-            } resumeLi`}
-          >
-            Achievements
-          </li>
         </ul>
       </div>
-      {educationData && <Education />}
-      {skillData && <Skills />}
-      {achievementData && <Achievement />}
-      {experienceData && <Experience />}
- 
+
+      {/* Content Sections */}
+      <div className="mt-8">
+        {activeTab === 'education' && <Education />}
+        {activeTab === 'skills' && <Skills />}
+        {activeTab === 'experience' && <Experience />}
+      </div>
     </section>
   );
 }
 
-export default Resume
+export default Resume;

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { contactImg } from "../../assets/index";
 
 const ContactLeft = () => {
@@ -13,11 +13,11 @@ const ContactLeft = () => {
       <div className="flex flex-col gap-4">
         <h3 className="text-3xl font-bold text-white">Prajwal Khadka</h3>
         <p className="text-lg font-normal text-gray-400">
-          Frontend Developer
+          Backend Developer
         </p>
         <p className="text-base text-gray-400 tracking-wide">
-        Skilled frontend developer adept at crafting intuitive 
-        interfaces with a focus on user experience and performance optimization.
+        Skilled Backend Developer proficient in Node.js, experienced in building robust 
+        APIs and scalable server-side applications with a strong focus on performance, security, and maintainability.
         </p>
         <p className="text-base text-gray-400 flex items-center gap-2">
           Phone: <span className="text-lightText">+977 9863979269</span>
@@ -30,13 +30,37 @@ const ContactLeft = () => {
         <h2 className="text-base uppercase font-titleFont mb-4">Find me in</h2>
         <div className="flex gap-4">
           <span className="bannerIcon">
-            <FaFacebookF />
+            <a 
+                  href="https://www.facebook.com/share/1CMzxQ956H/?mibextid=wwXIfr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bannerIcon"
+                  aria-label="Facebook profile"
+                >
+                  <FaFacebookF />
+                </a>
           </span>
           <span className="bannerIcon">
-            <FaInstagram />
+           <a 
+                 href="https://www.instagram.com/pra_j_wal_11_26?igsh=MXIydjV0dWxienJp&utm_source=qr" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="bannerIcon"
+                 aria-label="Instagram profile"
+               >
+                 <FaInstagram />
+               </a>
           </span>
           <span className="bannerIcon">
-            <FaLinkedinIn />
+           <a 
+                 href="https://www.linkedin.com/in/prajal-khadka-242263312?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="bannerIcon"
+                 aria-label="LinkedIn profile"
+               >
+                 <FaLinkedinIn />
+               </a>
           </span>
         </div>
       </div>
