@@ -6,11 +6,31 @@ import Experience from "./Experience"
 
 const Resume = () => {
   const [activeTab, setActiveTab] = useState('education');
+const [downloadSuccess, setDownloadSuccess] = useState(false);
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/files/Resume.pdf';
+    link.setAttribute('download', 'resume.pdf');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    setDownloadSuccess(true);
+    setTimeout(() => setDownloadSuccess(false), 3000);
+  };
+
 
   return (
     <section id="resume" className="w-full py-20 border-b-[1px] border-b-black">
       <div className="flex justify-center items-center text-center">
         <Title title="" des="My Resume" />
+        <button
+          onClick={handleDownload}
+          className="absolute right-0 bg-designColor text-white px-6 py-3 rounded-md hover:bg-opacity-80 transition-all duration-300 text-lg font-semibold"
+        >
+          Download CV
+        </button>
       </div>
       
       {/* Navigation Menu */}
